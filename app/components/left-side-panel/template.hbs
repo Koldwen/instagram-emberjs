@@ -1,0 +1,35 @@
+<div class="left-side-panel">
+  <LeftSidePanel::Link
+    @linkRoute="index"
+    @linkImgSrc="assets/svg/app-logo.svg"
+    @linkImgAlt="App logo"
+  />
+
+  <LeftSidePanel::Link
+    @linkRoute="home"
+    @linkImgSrc="assets/svg/home-icon.svg"
+    @linkImgAlt="Home icon"
+    @linkText="Home"
+    width="24px"
+  />
+
+  <LeftSidePanel::Link
+    @linkRoute="search"
+    @linkImgSrc="assets/svg/search-icon.svg"
+    @linkImgAlt="Search icon"
+    @linkText="Search"
+    width="24px"
+  />
+
+  <LeftSidePanel::Link
+    @linkRoute="profile"
+    @linkImgSrc="assets/png/profile-picture.png"
+    @linkImgAlt="Profile picture icon"
+    @linkText="Profile"
+    width="24px"
+    height="24px"
+    class="profile-picture"
+  />
+
+  <LeftSidePanel::More @text="More" width="24px" height="24px" />
+</div>
