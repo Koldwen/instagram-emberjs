@@ -1,4 +1,6 @@
 <LinkTo @route={{@linkRoute}} class="item">
-  <img src={{@linkImgSrc}} alt={{@linkImgAlt}} ...attributes />
+  {{#if @linkImgSrc}}
+    <img src={{@linkImgSrc}} alt={{@linkImgAlt}} ...attributes />
+  {{/if}}
   <span>{{@linkText}}</span>
 </LinkTo>
