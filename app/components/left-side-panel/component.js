@@ -2,11 +2,15 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
-export default class MoreComponent extends Component {
+export default class LeftSidePanelComponent extends Component {
   @tracked
   showMenu = false;
   @tracked
   menuStyle = '';
+
+  get visibility() {
+    return this.showMenu ? 'visible' : 'hidden';
+  }
 
   @action
   toggleMenu() {
@@ -25,9 +29,5 @@ export default class MoreComponent extends Component {
     }
 
     this.menuStyle = this.menuPosition + `visibility: ${this.visibility};`;
-  }
-
-  get visibility() {
-    return this.showMenu ? 'visible' : 'hidden';
   }
 }

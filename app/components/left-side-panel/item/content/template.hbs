@@ -1,0 +1,9 @@
+{{#if @imgSrc}}
+  <img
+    class="{{if @isSvgImg 'svgImg'}}"
+    src="{{@imgSrc}}"
+    alt="{{@imgAlt}}"
+    ...attributes
+  />
+{{/if}}
+<span>{{@text}}</span>

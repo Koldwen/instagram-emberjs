@@ -1,0 +1,33 @@
+<div id="more-menu" class="more-menu" style="{{@style}}">
+  <ul>
+    <li>
+      <LeftSidePanel::Item
+        @linkRoute="settings"
+        @isSvgImg={{true}}
+        @imgSrc="assets/svg/settings-icon.svg"
+        @imgAlt="Settings icon"
+        @text="Settings"
+        width="16px"
+      />
+    </li>
+
+    <li>
+      <LeftSidePanel::Item
+        @isSvgImg={{true}}
+        @imgSrc="assets/svg/{{if this.darkTheme 'dark' 'light'}}-theme-icon.svg"
+        @imgAlt="Switch theme icon"
+        @text="Switch theme"
+        @onClick={{this.toggleTheme}}
+        width="16px"
+      />
+    </li>
+  </ul>
+
+  <span class="separator"></span>
+
+  <ul>
+    <li>
+      <LeftSidePanel::Item @linkRoute="index" @text="Exit" />
+    </li>
+  </ul>
+</div>
