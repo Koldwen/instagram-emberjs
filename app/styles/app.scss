@@ -1,4 +1,4 @@
-@import "variables";
+@import url("variables");
 
 :root {
   --primary-color: var(--dark-primary-color);
@@ -7,7 +7,6 @@
   --quaternary-color: var(--dark-quaternary-color);
   --color: var(--dark-color);
   --filter: var(--dark-filter);
-
   --dark-primary-color: black;
   --dark-secondary-color: #262626;
   --dark-tertiary-color: #353535;
@@ -15,7 +14,6 @@
   --dark-color: white;
   --dark-filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(77deg)
     brightness(114%) contrast(101%);
-
   --light-primary-color: white;
   --light-secondary-color: #f2f2f2;
   --light-tertiary-color: #dbdbdb;
@@ -53,7 +51,7 @@ button {
   padding: 0;
 }
 
-.svgImg {
+.svg-img {
   filter: var(--filter);
 }
 
@@ -62,12 +60,7 @@ button {
   width: 220px;
   border-right: 1px solid var(--secondary-color);
   box-sizing: border-box;
-
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 40px;
-  padding-bottom: 20px;
-
+  padding: 40px 12px 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -76,27 +69,13 @@ button {
     display: flex;
     flex-direction: row;
     gap: 10px;
-
     text-decoration: none;
     align-items: center;
     font-size: 16px;
-
     padding: 5px;
     padding-left: 10px;
     border-radius: 5px;
     cursor: pointer;
-  }
-
-  .item:hover:not(:first-child) {
-    background-color: var(--secondary-color);
-  }
-
-  .profile-picture {
-    border-radius: 50%;
-  }
-
-  .more {
-    margin-top: auto;
   }
 
   .more-menu {
@@ -128,5 +107,17 @@ button {
       display: flex;
       border: 2px solid var(--tertiary-color);
     }
+  }
+
+  .item:hover:not(:first-child) {
+    background-color: var(--secondary-color);
+  }
+
+  .profile-picture {
+    border-radius: 50%;
+  }
+
+  .more {
+    margin-top: auto;
   }
 }
