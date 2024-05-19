@@ -1,0 +1,46 @@
+<div class="left-side-panel">
+  <LeftSidePanel::Item
+    @linkRoute="index"
+    @isSvgImg={{true}}
+    @imgSrc="assets/svg/app-logo-small.svg"
+    @imgAlt="App logo"
+  />
+
+  <LeftSidePanel::Item
+    @linkRoute="index"
+    @isSvgImg={{true}}
+    @imgSrc="assets/svg/home-icon.svg"
+    @imgAlt="Home icon"
+    width="24px"
+  />
+
+  <LeftSidePanel::Item
+    @linkRoute="search"
+    @isSvgImg={{true}}
+    @imgSrc="assets/svg/search-icon.svg"
+    @imgAlt="Search icon"
+    width="24px"
+  />
+
+  <LeftSidePanel::Item
+    @linkRoute="profile"
+    @imgSrc="assets/png/profile-picture.png"
+    @imgAlt="Profile picture icon"
+    width="24px"
+    height="24px"
+    class="profile-picture"
+  />
+
+  <LeftSidePanel::MoreMenu @style={{this.menuStyle}} />
+
+  <LeftSidePanel::Item
+    @id="more-button"
+    @class="more"
+    @onClick={{this.toggleMenu}}
+    @isSvgImg={{true}}
+    @imgSrc="/assets/svg/burger-icon.svg"
+    @imgAlt="More icon"
+    width="24px"
+    height="24px"
+  />
+</div>
