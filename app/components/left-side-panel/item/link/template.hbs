@@ -1,0 +1,14 @@
+<LinkTo id="{{@id}}" @route={{@linkRoute}} class="item {{@class}}">
+  {{#if @imgSrc}}
+    <img
+      class="{{if @isSvgImg 'svg-img'}} {{@imgClass}}"
+      src="{{@imgSrc}}"
+      alt="{{@imgAlt}}"
+      width="{{@imgWidth}}"
+      height="{{@imgHeight}}"
+    />
+  {{/if}}
+  {{#if @text}}
+    <span>{{@text}}</span>
+  {{/if}}
+</LinkTo>

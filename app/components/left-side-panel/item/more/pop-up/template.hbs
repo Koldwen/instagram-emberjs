@@ -1,25 +1,25 @@
-<div id="more-menu" class="more-menu" style="{{@style}}">
+<div id="{{@id}}" class="pop-up">
   <div>
-    <LeftSidePanel::Item
+    <LeftSidePanel::Item::Link
       @linkRoute="settings"
       @isSvgImg={{true}}
       @imgSrc="assets/svg/settings-icon.svg"
       @imgAlt="Settings icon"
       @text="Settings"
-      width="16px"
+      @imgWidth="16"
     />
 
-    <LeftSidePanel::Item
+    <LeftSidePanel::Item::Button
       @isSvgImg={{true}}
       @imgSrc="assets/svg/{{if this.darkTheme 'dark' 'light'}}-theme-icon.svg"
       @imgAlt="Switch theme icon"
       @text="Switch theme"
       @onClick={{this.toggleTheme}}
-      width="16px"
+      @imgWidth="16"
     />
   </div>
 
   <span class="separator"></span>
 
-  <LeftSidePanel::Item @linkRoute="index" @text="Exit" />
+  <LeftSidePanel::Item::Link @linkRoute="index" @text="Exit" />
 </div>
