@@ -60,6 +60,10 @@ body {
   filter: var(--filter);
 }
 
+.item {
+  cursor: pointer;
+}
+
 .left-side-panel {
   display: flex;
   box-sizing: border-box;
@@ -101,7 +105,6 @@ body {
     font-size: 16px;
     border-radius: 5px;
     text-wrap: nowrap;
-    cursor: pointer;
 
     @media (min-width: $min-breakpoint-desktop) {
       padding: 5px;

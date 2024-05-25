@@ -1,11 +1,12 @@
-<LeftSidePanel::Item::More::PopUp @id="{{this.popUpId}}" />
-<LeftSidePanel::Item::Button
+<LeftSidePanel::More::PopUp @id="{{this.popUpId}}" />
+<Item::Button
   @id="{{this.buttonId}}"
-  @class="more"
   @onClick={{this.toggleMenu}}
   @isSvgImg={{true}}
   @imgSrc="/assets/svg/burger-icon.svg"
   @imgAlt="More icon"
+  @text="More"
+  @class="more"
   @imgWidth="24"
   @imgHeight="24"
 />
