@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { visit, currentURL, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'instagram-emberjs/tests/helpers';
 
-module('Acceptance | left side panel/left side panel', function (hooks) {
+module('Acceptance | left side panel', function (hooks) {
   setupApplicationTest(hooks);
 
   test('Logo link works correctly', async function (assert) {
