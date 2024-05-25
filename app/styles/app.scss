@@ -1,4 +1,4 @@
-@import url("variables");
+@import "variables";
 
 :root {
   --primary-color: var(--dark-primary-color);
@@ -26,12 +26,14 @@
 * {
   color: var(--color);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
 }
 
 html,
 body {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
   background-color: var(--primary-color);
@@ -39,16 +41,19 @@ body {
 
 .app-body {
   display: flex;
-  flex-direction: row;
   height: 100%;
-}
 
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
+  @media (min-width: $min-breakpoint-desktop) {
+    flex-direction: row;
+  }
+
+  @media (min-width: $min-breakpoint-tablet) and (max-width: $max-breakpoint-tablet) {
+    flex-direction: row;
+  }
+
+  @media (max-width: $max-breakpoint-mobile) {
+    flex-direction: column;
+  }
 }
 
 .svg-img {
@@ -56,14 +61,36 @@ button {
 }
 
 .left-side-panel {
-  height: 100%;
-  width: 220px;
-  border-right: 1px solid var(--secondary-color);
-  box-sizing: border-box;
-  padding: 40px 12px 20px;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  box-sizing: border-box;
+
+  @media (min-width: $min-breakpoint-desktop) {
+    flex-direction: column;
+    height: 100%;
+    width: 220px;
+    gap: 12px;
+    padding: 40px 12px 20px;
+    border-right: 1px solid var(--secondary-color);
+  }
+
+  @media (min-width: $min-breakpoint-tablet) and (max-width: $max-breakpoint-tablet) {
+    flex-direction: column;
+    height: 100%;
+    width: 60px;
+    gap: 12px;
+    padding: 40px 12px 20px;
+    border-right: 1px solid var(--secondary-color);
+    align-items: center;
+  }
+
+  @media (max-width: $max-breakpoint-mobile) {
+    height: max-content;
+    width: 100%;
+    order: 1;
+    flex-direction: row;
+    border-top: 1px solid var(--secondary-color);
+    justify-content: space-around;
+  }
 
   .item {
     display: flex;
@@ -72,26 +99,66 @@ button {
     text-decoration: none;
     align-items: center;
     font-size: 16px;
-    padding: 5px;
-    padding-left: 10px;
     border-radius: 5px;
+    text-wrap: nowrap;
     cursor: pointer;
+
+    @media (min-width: $min-breakpoint-desktop) {
+      padding: 5px;
+      padding-left: 10px;
+    }
+
+    @media (min-width: $min-breakpoint-tablet) and (max-width: $max-breakpoint-tablet) {
+      padding: 5px;
+    }
+
+    @media (max-width: $max-breakpoint-mobile) {
+      padding: 8px 0;
+    }
   }
 
-  .more-menu {
+  .item:first-child {
+    @media (min-width: $min-breakpoint-desktop) {
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: $min-breakpoint-tablet) and (max-width: $max-breakpoint-tablet) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $max-breakpoint-mobile) {
+      margin-bottom: 0;
+    }
+  }
+
+  .item:hover:not(:first-child) {
+    @media (min-width: $min-breakpoint-desktop) {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  .profile-picture {
+    border-radius: 50%;
+  }
+
+  .more {
+    margin-top: auto;
+  }
+
+  .pop-up {
     background-color: var(--secondary-color);
     border-radius: 10px;
     z-index: 1000;
     position: fixed;
-    visibility: hidden;
     margin-top: auto;
+    visibility: hidden;
 
     .item {
       margin: 5px;
+      padding: 10px;
       padding-right: 40px;
-      padding-top: 10px;
-      padding-bottom: 10px;
       font-size: 14px;
+      width: auto;
     }
 
     .item:hover {
@@ -109,15 +176,11 @@ button {
     }
   }
 
-  .item:hover:not(:first-child) {
-    background-color: var(--secondary-color);
+  .pop-up.visible {
+    visibility: visible;
   }
+}
 
-  .profile-picture {
-    border-radius: 50%;
-  }
-
-  .more {
-    margin-top: auto;
-  }
+.page {
+  flex-grow: 1;
 }

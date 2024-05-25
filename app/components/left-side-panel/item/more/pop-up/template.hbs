@@ -1,0 +1,27 @@
+<div id="{{@id}}" class="pop-up">
+  <div>
+    <LeftSidePanel::Item::Link
+      @id="settings-link"
+      @linkRoute="settings"
+      @isSvgImg={{true}}
+      @imgSrc="assets/svg/settings-icon.svg"
+      @imgAlt="Settings icon"
+      @text="Settings"
+      @imgWidth="16"
+    />
+
+    <LeftSidePanel::Item::Button
+      @id="switch-theme-button"
+      @isSvgImg={{true}}
+      @imgSrc="assets/svg/{{if this.darkTheme 'dark' 'light'}}-theme-icon.svg"
+      @imgAlt="Switch theme icon"
+      @text="Switch theme"
+      @onClick={{this.toggleTheme}}
+      @imgWidth="16"
+    />
+  </div>
+
+  <span class="separator"></span>
+
+  <LeftSidePanel::Item::Link @id="exit-link" @linkRoute="index" @text="Exit" />
+</div>

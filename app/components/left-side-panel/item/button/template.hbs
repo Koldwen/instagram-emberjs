@@ -1,0 +1,19 @@
+<button
+  id="{{@id}}"
+  type="button"
+  class="item {{@class}}"
+  {{on "click" @onClick}}
+>
+  {{#if @imgSrc}}
+    <img
+      class="{{if @isSvgImg 'svg-img'}} {{@imgClass}}"
+      src="{{@imgSrc}}"
+      alt="{{@imgAlt}}"
+      width="{{@imgWidth}}"
+      height="{{@imgHeight}}"
+    />
+  {{/if}}
+  {{#if @text}}
+    <span>{{@text}}</span>
+  {{/if}}
+</button>
