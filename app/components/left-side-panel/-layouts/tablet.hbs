@@ -1,5 +1,6 @@
-<div class="left-side-panel">
+<div id="left-side-panel" class="left-side-panel">
   <LeftSidePanel::Item::Link
+    @id="app-link"
     @linkRoute="index"
     @isSvgImg={{true}}
     @imgSrc="assets/svg/app-logo-small.svg"
@@ -7,6 +8,7 @@
   />
 
   <LeftSidePanel::Item::Link
+    @id="home-link"
     @linkRoute="index"
     @isSvgImg={{true}}
     @imgSrc="assets/svg/home-icon.svg"
@@ -15,6 +17,7 @@
   />
 
   <LeftSidePanel::Item::Link
+    @id="search-link"
     @linkRoute="search"
     @isSvgImg={{true}}
     @imgSrc="assets/svg/search-icon.svg"
@@ -23,6 +26,7 @@
   />
 
   <LeftSidePanel::Item::Link
+    @id="profile-link"
     @linkRoute="profile"
     @imgSrc="assets/png/profile-picture.png"
     @imgAlt="Profile picture icon"
