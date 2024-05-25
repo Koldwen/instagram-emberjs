@@ -43,5 +43,11 @@ jobs:
           cache: npm
       - name: Install Dependencies
         run: npm ci
+      - name: Set screen size for tests
+        run: |
+          echo "Setting screen size for tests"
+          export DISPLAY=:99
+          Xvfb :99 -screen 0 1280x1024x24 &
+          sleep 3
       - name: Run Tests
         run: npm test
