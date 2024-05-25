@@ -25,7 +25,7 @@ module('Integration | Component | more', function (hooks) {
     );
   });
 
-  test('it renders correctly', async function (assert) {
+  test('it renders More button correctly', async function (assert) {
     await render(hbs`<LeftSidePanel::Item::More />`);
     let button = this.element.children[1];
 
