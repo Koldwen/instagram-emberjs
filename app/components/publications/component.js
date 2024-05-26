@@ -1,19 +1,15 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { A } from '@ember/array'; // Importa A desde Ember
+import { A } from '@ember/array';
+import { inject as service } from '@ember/service';
 
 export default class PublicationsComponent extends Component {
-  publication = {
-    accountName: 'Fake account',
-    publicationAge: '2hrs',
-    nLikes: 200,
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at dictum mauris. Praesent diam odio, volutpat pharetra ligula ut, lobortis blandit velit. Sed vel vestibulum quam, sed tincidunt erat.',
-  };
+  @service
+  publicationFetcher;
 
   @tracked
-  publications = A([this.publication, this.publication, this.publication]);
+  publications = A([]);
 
   get indexPage() {
     return document.getElementById('index-page');
@@ -24,24 +20,28 @@ export default class PublicationsComponent extends Component {
   }
 
   @action
-  setUpScroller() {
+  setUp() {
     this.indexPage.addEventListener('scroll', this.handleScroll);
+    this.fetchPublications();
   }
 
   @action
   handleScroll() {
-    console.log(this.publications.length);
     let publicationsHeight =
       this.publicationsElement.getBoundingClientRect().height;
     let scrollPosition = this.publicationsElement.getBoundingClientRect().y;
     let windowHeight = window.innerHeight;
 
     if (-scrollPosition + windowHeight >= publicationsHeight - 200) {
+      this.fetchPublications();
+    }
+  }
+
+  async fetchPublications() {
+    for (let i = 1; i <= 5; i++) {
       this.publications = A([
         ...this.publications,
-        this.publication,
-        this.publication,
-        this.publication,
+        await this.publicationFetcher.fetchPublication(),
       ]);
     }
   }

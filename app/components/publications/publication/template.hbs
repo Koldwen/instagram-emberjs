@@ -1,0 +1,64 @@
+<div class="publication {{unless this.loaded 'hide'}}">
+  <div class="header">
+    <img
+      class="profile-picture"
+      src="{{@profilePicture}}"
+      alt="Profile picture"
+      width="32"
+      height="32"
+      {{did-insert this.waitForProfilePicture}}
+    />
+    <span>{{@username}}</span>
+    <span>{{@publicationDate}}</span>
+    <img />
+  </div>
+  <div class="body">
+    <img src="{{@media}}" alt="Publication" {{did-insert this.waitForMedia}} />
+  </div>
+  <div class="footer">
+    <div class="interactions">
+      <Item::Button
+        @onClick={{this.like}}
+        @isSvgImg={{true}}
+        @imgSrc="/assets/svg/{{this.likeIcon}}.svg"
+        @imgAlt="Like icon"
+        @imgWidth="24"
+        @imgHeight="24"
+      />
+      <Item::Button
+        @onClick={{this.comment}}
+        @isSvgImg={{true}}
+        @imgSrc="/assets/svg/comment-icon.svg"
+        @imgAlt="Comment icon"
+        @imgWidth="24"
+        @imgHeight="24"
+      />
+      <Item::Button
+        @onClick={{this.send}}
+        @isSvgImg={{true}}
+        @imgSrc="/assets/svg/send-icon.svg"
+        @imgAlt="Send icon"
+        @imgWidth="24"
+        @imgHeight="24"
+      />
+      <Item::Button
+        @onClick={{this.bookmark}}
+        @isSvgImg={{true}}
+        @imgSrc="/assets/svg/{{this.bookmarkIcon}}.svg"
+        @imgAlt="Bookmark icon"
+        @imgWidth="24"
+        @imgHeight="24"
+      />
+    </div>
+    <div class="reactions">
+      <span>{{this.likes}} likes</span>
+    </div>
+    <div class="description">
+      <span>{{@description}}</span>
+    </div>
+  </div>
+</div>
+
+{{#unless this.loaded}}
+  <Publications::Publication::Skeleton />
+{{/unless}}

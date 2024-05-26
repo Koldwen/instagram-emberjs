@@ -1,0 +1,13 @@
+<div id="publications" class="publications" {{did-insert this.setUp}}>
+  {{#each this.publications as |publication|}}
+    <Publications::Publication
+      @username={{publication.username}}
+      @publicationDate={{publication.publicationDate}}
+      @likes={{publication.likes}}
+      @description={{publication.description}}
+      @media={{publication.media}}
+      @profilePicture={{publication.profilePicture}}
+    />
+    <span class="separator"></span>
+  {{/each}}
+</div>
