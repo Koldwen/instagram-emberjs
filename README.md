@@ -5,6 +5,8 @@ A short introduction of this app could easily go here.
 
 ## Demo
 
+Here's a small demo of the project to quickly see what it is. If you can't see the video, it is located at ./demo/demo.mp4.
+
 <video controls>
   <source src="./demo/demo.mp4" type="video/mp4">
 </video>
