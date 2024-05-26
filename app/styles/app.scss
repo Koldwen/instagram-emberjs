@@ -60,6 +60,10 @@ body {
   filter: var(--filter);
 }
 
+.item {
+  cursor: pointer;
+}
+
 .left-side-panel {
   display: flex;
   box-sizing: border-box;
@@ -101,7 +105,6 @@ body {
     font-size: 16px;
     border-radius: 5px;
     text-wrap: nowrap;
-    cursor: pointer;
 
     @media (min-width: $min-breakpoint-desktop) {
       padding: 5px;
@@ -135,10 +138,6 @@ body {
     @media (min-width: $min-breakpoint-desktop) {
       background-color: var(--secondary-color);
     }
-  }
-
-  .profile-picture {
-    border-radius: 50%;
   }
 
   .more {
@@ -183,4 +182,111 @@ body {
 
 .page {
   flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-picture {
+  border-radius: 50%;
+}
+
+.publications {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 470px;
+
+  .separator {
+    display: flex;
+    border: 1px solid var(--tertiary-color);
+  }
+
+  .publication {
+    width: 100%;
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 0;
+      gap: 10px;
+      font-size: 16px;
+    }
+
+    .body img {
+      width: 100%;
+      height: auto;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .interactions {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        padding-top: 10px;
+
+        button:last-child {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
+
+.skeleton {
+  .profile-picture {
+    width: 32px;
+    height: 32px;
+  }
+
+  .text {
+    width: 50px;
+    height: 16px;
+  }
+
+  .media {
+    width: 470px;
+    height: 470px;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .text {
+      width: 400px;
+      height: 16px;
+    }
+  }
+}
+
+.shimmer {
+  background: linear-gradient(-45deg, #d4d4d4 40%, #fff 50%, #d4d4d4 60%);
+  background-size: 300%;
+  background-position-x: 100%;
+  animation: shimmer 1s infinite linear;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: 0%;
+  }
+}
+
+.hide {
+  display: none;
 }

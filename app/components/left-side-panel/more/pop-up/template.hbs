@@ -1,6 +1,6 @@
 <div id="{{@id}}" class="pop-up">
   <div>
-    <LeftSidePanel::Item::Link
+    <Item::Link
       @id="settings-link"
       @linkRoute="settings"
       @isSvgImg={{true}}
@@ -10,7 +10,7 @@
       @imgWidth="16"
     />
 
-    <LeftSidePanel::Item::Button
+    <Item::Button
       @id="switch-theme-button"
       @isSvgImg={{true}}
       @imgSrc="assets/svg/{{if this.darkTheme 'dark' 'light'}}-theme-icon.svg"
@@ -23,5 +23,5 @@
 
   <span class="separator"></span>
 
-  <LeftSidePanel::Item::Link @id="exit-link" @linkRoute="index" @text="Exit" />
+  <Item::Link @id="exit-link" @linkRoute="index" @text="Exit" />
 </div>

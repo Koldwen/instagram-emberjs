@@ -7,7 +7,7 @@ module('Integration | Component | more pop-up', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders correctly', async function (assert) {
-    await render(hbs`<LeftSidePanel::Item::More::PopUp @id='more-pop-up' />`);
+    await render(hbs`<LeftSidePanel::More::PopUp @id='more-pop-up' />`);
     let popUp = this.element.children[0];
     assert.strictEqual(popUp.id, 'more-pop-up', 'It has correct pop up id');
     assert.strictEqual(popUp.children.length, 3, 'There are only 3 children');
@@ -21,7 +21,7 @@ module('Integration | Component | more pop-up', function (hooks) {
   });
 
   test('it renders Settings link correctly', async function (assert) {
-    await render(hbs`<LeftSidePanel::Item::More::PopUp @id='more-pop-up' />`);
+    await render(hbs`<LeftSidePanel::More::PopUp @id='more-pop-up' />`);
     let popUp = this.element.children[0];
     let upperMenu = popUp.children[0];
     let item = upperMenu.children[0];
@@ -63,7 +63,7 @@ module('Integration | Component | more pop-up', function (hooks) {
   });
 
   test('it renders Switch theme button correctly', async function (assert) {
-    await render(hbs`<LeftSidePanel::Item::More::PopUp @id='more-pop-up' />`);
+    await render(hbs`<LeftSidePanel::More::PopUp @id='more-pop-up' />`);
     let popUp = this.element.children[0];
     let upperMenu = popUp.children[0];
     let item = upperMenu.children[1];
@@ -100,7 +100,7 @@ module('Integration | Component | more pop-up', function (hooks) {
   });
 
   test('it renders separator correctly', async function (assert) {
-    await render(hbs`<LeftSidePanel::Item::More::PopUp @id='more-pop-up' />`);
+    await render(hbs`<LeftSidePanel::More::PopUp @id='more-pop-up' />`);
     let popUp = this.element.children[0];
     let separator = popUp.children[1];
 
@@ -114,7 +114,7 @@ module('Integration | Component | more pop-up', function (hooks) {
   });
 
   test('it renders Exit link correctly', async function (assert) {
-    await render(hbs`<LeftSidePanel::Item::More::PopUp @id='more-pop-up' />`);
+    await render(hbs`<LeftSidePanel::More::PopUp @id='more-pop-up' />`);
     let popUp = this.element.children[0];
     let item = popUp.children[2];
 

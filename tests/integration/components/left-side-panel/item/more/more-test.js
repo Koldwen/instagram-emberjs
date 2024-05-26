@@ -7,7 +7,7 @@ module('Integration | Component | more', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders correctly', async function (assert) {
-    await render(hbs`<LeftSidePanel::Item::More />`);
+    await render(hbs`<LeftSidePanel::More />`);
     assert.strictEqual(
       this.element.children.length,
       2,
@@ -26,7 +26,7 @@ module('Integration | Component | more', function (hooks) {
   });
 
   test('it renders More button correctly', async function (assert) {
-    await render(hbs`<LeftSidePanel::Item::More />`);
+    await render(hbs`<LeftSidePanel::More />`);
     let button = this.element.children[1];
 
     assert.strictEqual(button.tagName, 'BUTTON', 'More button is a button');
