@@ -3,17 +3,20 @@
     <img
       class="profile-picture"
       src="{{@profilePicture}}"
-      alt="Profile picture"
+      alt="User profile pic"
       width="32"
       height="32"
       {{did-insert this.waitForProfilePicture}}
     />
     <span>{{@username}}</span>
     <span>{{@publicationDate}}</span>
-    <img />
   </div>
   <div class="body">
-    <img src="{{@media}}" alt="Publication" {{did-insert this.waitForMedia}} />
+    <img
+      src="{{@media}}"
+      alt="User publication"
+      {{did-insert this.waitForMedia}}
+    />
   </div>
   <div class="footer">
     <div class="interactions">
